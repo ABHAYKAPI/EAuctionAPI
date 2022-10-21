@@ -1,0 +1,145 @@
+{
+  "ReRoutes": [
+    //Authenticate WebAPI
+    {
+      "DownstreamPathTemplate": "/api/Account",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "authenticationwebapi20221020173359.azurewebsites.net",
+          "Port": "443"
+        }
+
+      ],
+      "UpstreamPathTemplate": "/api/Account",
+      "UpstreamHttpMethod": [ "POST" ]
+    },
+
+    //seller
+    {
+      "DownstreamPathTemplate": "/api/v1/seller/GetString",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": "52280"
+        }
+
+      ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer",
+        "AllowedScopes": []
+      },
+      "RouteClaimsRequirement": {
+        "Role": "Seller"
+      },
+      "UpstreamPathTemplate": "/apigateway/v1/seller/GetString",
+      "UpstreamHttpMethod": [ "GET" ],
+      "RouteIsCaseSensitive": false
+    },
+    {
+      "DownstreamPathTemplate": "/api/v1/seller",
+
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "sellerapi20221021132637.azurewebsites.net",
+          "Port": "443"
+        }
+
+      ],
+      "UpstreamPathTemplate": "/apigateway/v1/Seller",
+      "UpstreamHttpMethod": [ "GET" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/v1/seller/Add",
+
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "sellerapi20221021132637.azurewebsites.net",
+          "Port": "443"
+        }
+
+      ],
+      "UpstreamPathTemplate": "/apigatway/v1/seller/Add",
+      "UpstreamHttpMethod": [ "POST" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/v1/seller/ShowBids/{id}",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "sellerapi20221021132637.azurewebsites.net",
+          "Port": "443"
+        }
+
+      ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer",
+        "AllowedScopes": []
+      },
+      "RouteClaimsRequirement": {
+        "Role": "Seller"
+      },
+      "UpstreamPathTemplate": "/apigateway/v1/seller/ShowBids/{id}",
+      "UpstreamHttpMethod": [ "GET" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/v1/seller/Delete/{productId}",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "sellerapi20221021132637.azurewebsites.net",
+          "Port": "443"
+        }
+
+      ],
+      "UpstreamPathTemplate": "/apigateway/v1/seller/Delete/{productId}",
+      "UpstreamHttpMethod": [ "DELETE" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/v1/product/PlaceBid",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "buyerapi20221021133033.azurewebsites.net",
+          "Port": "443"
+        }
+
+      ],
+      //"AuthenticationOptions": {
+      //  "AuthenticationProviderKey": "Bearer",
+      //  "AllowedScopes": []
+      //},
+      //"RouteClaimsRequirement": {
+      //  "Role": "Seller"
+      //},
+      "UpstreamPathTemplate": "/api/v1/product/PlaceBid",
+      "UpstreamHttpMethod": [ "POST" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/v1/Buyer/UpdateBid/{productID}/{emailID}/{amount}",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "buyerapi20221021133033.azurewebsites.net",
+          "Port": "443"
+        }
+
+      ],
+      //"AuthenticationOptions": {
+      //  "AuthenticationProviderKey": "Bearer",
+      //  "AllowedScopes": []
+      //},
+      //"RouteClaimsRequirement": {
+      //  "Role": "Administrator"
+      //},
+      "UpstreamPathTemplate": "/apigateway/v1/Buyer/UpdateBid/{productID}/{emailID}/{amount}",
+      "UpstreamHttpMethod": [ "PUT" ]
+    }
+  ],
+  "GlobalConfiguration": {
+    "BaseUrl": "https://eauctionapigateway20221020183351.azurewebsites.net"
+  }
+}
