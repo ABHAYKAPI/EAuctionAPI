@@ -14,12 +14,6 @@ using MongoDB.Driver;
 using ProductAPI.IServices;
 using ProductAPI.Models;
 using ProductAPI.Services;
-using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Reflection;
-using System.Threading.Tasks;
 
 namespace ProductAPI
 {

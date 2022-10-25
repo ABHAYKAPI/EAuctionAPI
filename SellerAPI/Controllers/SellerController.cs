@@ -30,22 +30,12 @@ namespace ProductAPI.Controllers
             productService = product;
         }
 
-        [HttpGet]
-        [Route("GetString")]
-
-        //[Authorize(Roles = "Seller,Buyer")]
-        public async Task<string> GetValue()
-        {
-            return "Test Method";
-        }
-
         /// <summary>
         /// Api for Getting number of bid details against product id
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
         [HttpGet]
-        //[Authorize(Roles = "Seller,Buyer")]
         public async Task<IActionResult> GetProducts()
         {
             var response = await productService.GetProducts();
@@ -58,7 +48,6 @@ namespace ProductAPI.Controllers
         /// <param name="product"></param>
         /// <returns></returns>
         [HttpPost]
-        //[Authorize(Roles = "Seller")]
         [Route("Add")]
         public async Task<IActionResult> AddProduct([FromBody] Product product)
         {
@@ -72,7 +61,6 @@ namespace ProductAPI.Controllers
         /// <param name="id"></param>
         /// <returns></returns>
         [HttpGet]
-       // [Authorize(Roles = "Seller")]
         [Route("ShowBids/{id}")]
         public async Task<IActionResult> GetProduct(string id)
         {

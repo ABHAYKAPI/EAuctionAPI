@@ -11,35 +11,13 @@
         }
 
       ],
-      "UpstreamPathTemplate": "/api/Account",
+      "UpstreamPathTemplate": "/apigateway/v1/Account",
       "UpstreamHttpMethod": [ "POST" ]
     },
 
     //seller
     {
-      "DownstreamPathTemplate": "/api/v1/seller/GetString",
-      "DownstreamScheme": "http",
-      "DownstreamHostAndPorts": [
-        {
-          "Host": "localhost",
-          "Port": "52280"
-        }
-
-      ],
-      "AuthenticationOptions": {
-        "AuthenticationProviderKey": "Bearer",
-        "AllowedScopes": []
-      },
-      "RouteClaimsRequirement": {
-        "Role": "Seller"
-      },
-      "UpstreamPathTemplate": "/apigateway/v1/seller/GetString",
-      "UpstreamHttpMethod": [ "GET" ],
-      "RouteIsCaseSensitive": false
-    },
-    {
       "DownstreamPathTemplate": "/api/v1/seller",
-
       "DownstreamScheme": "https",
       "DownstreamHostAndPorts": [
         {
@@ -62,6 +40,13 @@
         }
 
       ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer",
+        "AllowedScopes": []
+      },
+      "RouteClaimsRequirement": {
+        "Role": "Seller"
+      },
       "UpstreamPathTemplate": "/apigatway/v1/seller/Add",
       "UpstreamHttpMethod": [ "POST" ]
     },
@@ -95,9 +80,18 @@
         }
 
       ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer",
+        "AllowedScopes": []
+      },
+      "RouteClaimsRequirement": {
+        "Role": "Seller"
+      },
       "UpstreamPathTemplate": "/apigateway/v1/seller/Delete/{productId}",
       "UpstreamHttpMethod": [ "DELETE" ]
     },
+
+    //Buyer API
     {
       "DownstreamPathTemplate": "/api/v1/product/PlaceBid",
       "DownstreamScheme": "https",
@@ -108,14 +102,14 @@
         }
 
       ],
-      //"AuthenticationOptions": {
-      //  "AuthenticationProviderKey": "Bearer",
-      //  "AllowedScopes": []
-      //},
-      //"RouteClaimsRequirement": {
-      //  "Role": "Seller"
-      //},
-      "UpstreamPathTemplate": "/api/v1/product/PlaceBid",
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer",
+        "AllowedScopes": []
+      },
+      "RouteClaimsRequirement": {
+        "Role": "Buyer"
+      },
+      "UpstreamPathTemplate": "/apigateway/v1/product/PlaceBid",
       "UpstreamHttpMethod": [ "POST" ]
     },
     {
@@ -128,13 +122,13 @@
         }
 
       ],
-      //"AuthenticationOptions": {
-      //  "AuthenticationProviderKey": "Bearer",
-      //  "AllowedScopes": []
-      //},
-      //"RouteClaimsRequirement": {
-      //  "Role": "Administrator"
-      //},
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer",
+        "AllowedScopes": []
+      },
+      "RouteClaimsRequirement": {
+        "Role": "Buyer"
+      },
       "UpstreamPathTemplate": "/apigateway/v1/Buyer/UpdateBid/{productID}/{emailID}/{amount}",
       "UpstreamHttpMethod": [ "PUT" ]
     }

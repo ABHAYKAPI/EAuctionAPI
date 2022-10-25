@@ -33,7 +33,6 @@ namespace BuyerAPI.Controllers
         /// <returns></returns>
         [HttpPost]
         [Route("PlaceBid")]
-        //[Authorize(Roles = "Buyer")]
         public async Task<IActionResult> PlaceBid(SellerInfo sellerInfo)
         {
             var response = await sellerInfos.placeBid(sellerInfo);
@@ -49,7 +48,6 @@ namespace BuyerAPI.Controllers
         /// <returns></returns>
         [HttpPut]
         [Route("UpdateBid/{productID}/{emailID}/{amount}")]
-        //[Authorize(Roles = "Buyer")]
         public async Task<IActionResult> UpdateBidAmount(string productID, string emailID, decimal amount)
         {
             var response = await sellerInfos.updateBid(productID, emailID, amount);

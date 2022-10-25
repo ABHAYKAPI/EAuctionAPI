@@ -4,10 +4,7 @@ using BuyerAPI.IServices;
 using BuyerAPI.Models;
 using BuyerAPI.Models.Validator;
 using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Net;
-using System.Net.Http;
 using System.Threading.Tasks;
 
 namespace BuyerAPI.Services
@@ -62,6 +59,7 @@ namespace BuyerAPI.Services
                             Phone = sellerInfos.Phone,
                             ProductID = sellerInfos.ProductID,
                             BidAMount = sellerInfos.BidAMount,
+                            Email =sellerInfos.Email,
                             CreatedBy = "System",
                             CreatedDate = DateTime.Now
                         };
