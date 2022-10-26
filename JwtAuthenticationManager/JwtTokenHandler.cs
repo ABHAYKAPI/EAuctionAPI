@@ -17,7 +17,11 @@ namespace JwtAuthenticationManager
         private readonly IMongoCollection<UserAccount> _UserInfoCollection;
         public JwtTokenHandler()
         {
-            var mongoClient = new MongoClient("mongodb://databaseeauction:qs5yGVKcItOih9EqHvbEgePMh5kpbSImDH9Ww3in15yVVpTGVrl00XuJkFodofgYxrtlNiTySlhFfp0ppJAiTA==@databaseeauction.mongo.cosmos.azure.com:10255/?ssl=true&replicaSet=globaldb&retrywrites=false&maxIdleTimeMS=120000&appName=@databaseeauction@");
+
+            //"ConnectionString": "mongodb://localhost:27017",
+            //"ConnectionString": "mongodb://databaseeauction:qs5yGVKcItOih9EqHvbEgePMh5kpbSImDH9Ww3in15yVVpTGVrl00XuJkFodofgYxrtlNiTySlhFfp0ppJAiTA==@databaseeauction.mongo.cosmos.azure.com:10255/?ssl=true&replicaSet=globaldb&retrywrites=false&maxIdleTimeMS=120000&appName=@databaseeauction@",
+            
+            var mongoClient = new MongoClient("mongodb://localhost:27017");
             var database = mongoClient.GetDatabase("EAuction");
             _UserInfoCollection = database.GetCollection<UserAccount>("UserMaster");
         }

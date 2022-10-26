@@ -4,5 +4,23 @@
         <name>AuthenticationWEBAPI</name>
     </assembly>
     <members>
+        <member name="T:AuthenticationWEBAPI.Controllers.AccountController">
+            <summary>
+            Controller for Authorize and authenticate the API
+            </summary>
+        </member>
+        <member name="M:AuthenticationWEBAPI.Controllers.AccountController.#ctor(JwtAuthenticationManager.JwtTokenHandler)">
+            <summary>
+            Injected dependecies
+            </summary>
+            <param name="jwtTokenHandler"></param>
+        </member>
+        <member name="M:AuthenticationWEBAPI.Controllers.AccountController.Authenticatae(JwtAuthenticationManager.Models.AuthenticatonRequest)">
+            <summary>
+            Api for Authenticating the API
+            </summary>
+            <param name="authenticatonRequest"></param>
+            <returns></returns>
+        </member>
     </members>
 </doc>

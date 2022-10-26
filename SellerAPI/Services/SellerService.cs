@@ -176,7 +176,11 @@ namespace ProductAPI.Services
                     bid.Category = product.Category;
                     bid.StartingPrice = product.StartingPrice;
                     bid.BidEndDate = product.BidEndDate;
-                    bid.seller = seller;
+
+                    if (seller.Count >= 1)
+                        bid.seller = seller;
+                    else 
+                        bid.seller = null;
 
                     string json = JsonSerializer.Serialize<BidInfo>(bid);
                     res.StatusCode = (int)HttpStatusCode.OK;
