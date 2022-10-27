@@ -93,7 +93,7 @@
 
     //Buyer API
     {
-      "DownstreamPathTemplate": "/api/v1/product/PlaceBid",
+      "DownstreamPathTemplate": "/api/v1/Buyer/PlaceBid",
       "DownstreamScheme": "https",
       "DownstreamHostAndPorts": [
         {
@@ -109,7 +109,7 @@
       "RouteClaimsRequirement": {
         "Role": "Buyer"
       },
-      "UpstreamPathTemplate": "/apigateway/v1/product/PlaceBid",
+      "UpstreamPathTemplate": "/apigateway/v1/Buyer/PlaceBid",
       "UpstreamHttpMethod": [ "POST" ]
     },
     {
