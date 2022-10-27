@@ -6,7 +6,7 @@
       "DownstreamScheme": "https",
       "DownstreamHostAndPorts": [
         {
-          "Host": "authenticationwebapi20221020173359.azurewebsites.net",
+          "Host": "authenticationwebapi20221027161904.azurewebsites.net",
           "Port": "443"
         }
 
@@ -21,7 +21,7 @@
       "DownstreamScheme": "https",
       "DownstreamHostAndPorts": [
         {
-          "Host": "sellerapi20221021132637.azurewebsites.net",
+          "Host": "sellerapi20221027172405.azurewebsites.net",
           "Port": "443"
         }
 
@@ -35,7 +35,7 @@
       "DownstreamScheme": "https",
       "DownstreamHostAndPorts": [
         {
-          "Host": "sellerapi20221021132637.azurewebsites.net",
+          "Host": "sellerapi20221027172405.azurewebsites.net",
           "Port": "443"
         }
 
@@ -55,7 +55,7 @@
       "DownstreamScheme": "https",
       "DownstreamHostAndPorts": [
         {
-          "Host": "sellerapi20221021132637.azurewebsites.net",
+          "Host": "sellerapi20221027172405.azurewebsites.net",
           "Port": "443"
         }
 
@@ -75,7 +75,7 @@
       "DownstreamScheme": "https",
       "DownstreamHostAndPorts": [
         {
-          "Host": "sellerapi20221021132637.azurewebsites.net",
+          "Host": "sellerapi20221027172405.azurewebsites.net",
           "Port": "443"
         }
 
@@ -97,7 +97,7 @@
       "DownstreamScheme": "https",
       "DownstreamHostAndPorts": [
         {
-          "Host": "buyerapi20221021133033.azurewebsites.net",
+          "Host": "buyerapi20221027173927.azurewebsites.net",
           "Port": "443"
         }
 
@@ -117,7 +117,7 @@
       "DownstreamScheme": "https",
       "DownstreamHostAndPorts": [
         {
-          "Host": "buyerapi20221021133033.azurewebsites.net",
+          "Host": "buyerapi20221027173927.azurewebsites.net",
           "Port": "443"
         }
 
@@ -134,6 +134,6 @@
     }
   ],
   "GlobalConfiguration": {
-    "BaseUrl": "https://eauctionapigateway20221020183351.azurewebsites.net"
+    "BaseUrl": "https://eauctionapigateway20221027164428.azurewebsites.net"
   }
 }

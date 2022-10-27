@@ -60,6 +60,9 @@ namespace EAuctionAPIGateway
                 //var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
                 //c.IncludeXmlComments(xmlPath);
             });
+            services.AddCors(options => {
+                options.AddPolicy("AllowAllOrigins", builders => builders.AllowAnyOrigin());
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -71,6 +74,12 @@ namespace EAuctionAPIGateway
             }
 
             app.UseRouting();
+            app.UseCors(builder =>
+            {
+                builder.AllowAnyOrigin()
+                       .AllowAnyMethod()
+                       .AllowAnyHeader();
+            });
             app.UseAuthentication();
             app.UseAuthorization();
 

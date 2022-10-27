@@ -21,7 +21,7 @@ namespace JwtAuthenticationManager
             //"ConnectionString": "mongodb://localhost:27017",
             //"ConnectionString": "mongodb://databaseeauction:qs5yGVKcItOih9EqHvbEgePMh5kpbSImDH9Ww3in15yVVpTGVrl00XuJkFodofgYxrtlNiTySlhFfp0ppJAiTA==@databaseeauction.mongo.cosmos.azure.com:10255/?ssl=true&replicaSet=globaldb&retrywrites=false&maxIdleTimeMS=120000&appName=@databaseeauction@",
             
-            var mongoClient = new MongoClient("mongodb://localhost:27017");
+            var mongoClient = new MongoClient("mongodb://eauctionmongodb:YT5MeTVjbHYHE9R6b1U7lhXko90ra2boXPQtcJvRJEtir85tDcYDJYOkc8eLAq7a2iihLh7aKEslOBE0fNtFOw==@eauctionmongodb.mongo.cosmos.azure.com:10255/?ssl=true&replicaSet=globaldb&retrywrites=false&maxIdleTimeMS=120000&appName=@eauctionmongodb@");
             var database = mongoClient.GetDatabase("EAuction");
             _UserInfoCollection = database.GetCollection<UserAccount>("UserMaster");
         }
